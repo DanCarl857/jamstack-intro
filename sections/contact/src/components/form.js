@@ -6,7 +6,7 @@ const INITIAL_STATE = {
     email: '',
     subject: '',
     body: '',
-    status: 'PENDING'
+    status: 'IDLE'
 }
 
 const reducer = (state, action) => {
@@ -41,8 +41,19 @@ const Form = () => {
     const handleSubmit = event => {
         event.preventDefault()
 
-        // TODO actually send the message
-        console.log(state)
+        fetch('/api/contact', {
+            method: 'POST',
+            body: JSON.stringify(state)
+        })
+            .then(response => response.json())
+            .then(response => {
+                console.log(response)
+                setStatus('SUCCESS')
+            })
+            .catch(error => {
+                console.error(error)
+                setStatus('ERROR')
+            })
     }
 
     if (state.status === 'SUCCESS') {
