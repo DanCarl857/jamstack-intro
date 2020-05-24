@@ -32,13 +32,13 @@ This is the code for a Frontend Masters workshop. In this workshop, we’ll lear
 
 ### Section 3: Serverless Functions
 
-Before serverless functions, getting
+Before serverless functions, getting 
 
 - What are serverless functions?
   - Talk about other providers
   - Use Netlify because it requires almost no setup/config
 - Create a "hello world" function
-- Use Netlify Dev to run it locally, Netlify Dev runs on port 8888
+- Use Netlify Dev to run it locally
 - Learn about redirects to change the URL
 - Deploy and see it working live
 
